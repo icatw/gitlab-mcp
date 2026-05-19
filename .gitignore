@@ -1,0 +1,14 @@
+# build artifacts
+/bin/
+/mcp-gitlab
+
+# IDE
+.idea/
+.vscode/
+
+# local env files
+.env
+.env.*
+
+# macOS
+.DS_Store
