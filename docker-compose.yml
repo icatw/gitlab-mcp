@@ -1,0 +1,15 @@
+services:
+  gitlab-mcp:
+    build: .
+    image: gitlab-mcp:local
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      MCP_TRANSPORT: http
+      MCP_HTTP_ADDR: 0.0.0.0:8080
+      MCP_HTTP_PATH: /mcp
+      MCP_AUTH_TOKEN: ${MCP_AUTH_TOKEN:?set MCP_AUTH_TOKEN}
+      GITLAB_BASE_URL: ${GITLAB_BASE_URL:-https://gitlab.example.com}
+      GITLAB_PROJECT: ${GITLAB_PROJECT:-}
+      GITLAB_INSECURE: ${GITLAB_INSECURE:-true}

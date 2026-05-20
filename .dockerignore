@@ -1,0 +1,10 @@
+.git
+.idea
+.vscode
+bin
+.env
+.env.*
+Dockerfile
+docker-compose.yml
+*.log
+.DS_Store
