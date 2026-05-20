@@ -1,4 +1,9 @@
-package main
+package mcpserver
+
+type ListResult struct {
+	Items []map[string]any `json:"items" jsonschema_description:"列表数据"`
+	Count int              `json:"count" jsonschema_description:"当前返回数量"`
+}
 
 type ProjectArgs struct {
 	Project string `json:"project,omitempty" jsonschema_description:"项目路径，未传则使用默认配置"`

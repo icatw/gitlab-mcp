@@ -44,6 +44,12 @@ func (c *Client) GetProject(path string) (map[string]any, error) {
 	return out, err
 }
 
+func (c *Client) CurrentUser() (map[string]any, error) {
+	var out map[string]any
+	_, err := c.do("GET", "/user", nil, &out)
+	return out, err
+}
+
 func (c *Client) GetIssue(projectPath, iid string) (map[string]any, error) {
 	var out map[string]any
 	_, err := c.do("GET", "/projects/"+url.PathEscape(projectPath)+"/issues/"+iid, nil, &out)
